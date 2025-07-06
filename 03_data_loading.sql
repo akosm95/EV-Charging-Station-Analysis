@@ -4,13 +4,6 @@
 -- Enable PostGIS extension for geographic data
 CREATE EXTENSION IF NOT EXISTS postgis;
 
--- Create table operators
-CREATE TABLE IF NOT EXISTS operators (
-    operator_id SERIAL PRIMARY KEY,
-    operator_name VARCHAR(50) UNIQUE NOT NULL,
-    is_active BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
 -- Create table stations
 CREATE TABLE IF NOT EXISTS stations (
@@ -41,22 +34,6 @@ CREATE TABLE IF NOT EXISTS stations (
     notes TEXT,
     original_text TEXT,
     location_point GEOMETRY(POINT, 4326),  -- PostGIS geometry column
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-
--- Create table for charging sessions
-CREATE TABLE IF NOT EXISTS charging_sessions (
-    session_id SERIAL PRIMARY KEY,
-    station_id BIGINT REFERENCES stations(station_id),
-    start_time TIMESTAMP NOT NULL,
-    end_time TIMESTAMP,
-    energy_delivered_kwh DECIMAL(10,2),
-    duration_minutes INT,
-    session_cost_huf DECIMAL(10,2),
-    user_id VARCHAR(50),
-    connector_type VARCHAR(20),
-    session_status VARCHAR(20) DEFAULT 'completed',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
