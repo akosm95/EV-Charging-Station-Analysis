@@ -1,6 +1,6 @@
 Project Overview
 
-This comprehensive data analysis project examined Hungary's electric vehicle charging infrastructure using data collected from the OpenChargeMap API. The analysis involved extensive data cleaning and transformation processes to standardize location information, pricing models, and operator details, followed by detailed analytical queries and visualization development.
+This portfolio/practice data analysis project examined Hungary's electric vehicle charging infrastructure using data collected from the OpenChargeMap API. The analysis involved extensive data cleaning and transformation processes to standardize location information, pricing models, and operator details, followed by detailed analytical queries and visualization development.
 
 Data Processing & Cleaning
 The initial dataset underwent significant preprocessing including column selection, reverse geocoding for missing location data, standardization of county names and operator identifiers, and comprehensive pricing data cleaning to distinguish between AC/DC charging types, time-based versus per-kWh pricing models, and free versus paid services. The cleaned data was subsequently loaded into a PostgreSQL database for advanced spatial and analytical queries.
